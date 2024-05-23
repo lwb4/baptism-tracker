@@ -9,6 +9,10 @@ export function Component() {
   const [daysToBaptism, setDaysToBaptism] = useState(86.3);
 
   useEffect(() => {
+    if (principlesTaught == null || principlesPerVisit == null || daysBetweenVisits == null) {
+      return;
+    }
+
     const calculatedPrinciplesToTeach = 40 - principlesTaught;
     setPrinciplesToTeach(calculatedPrinciplesToTeach);
 
@@ -30,10 +34,9 @@ export function Component() {
             <input
               className="block w-full rounded-md border border-gray-200 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
               id="principles-taught"
-              min="0"
               type="number"
               value={principlesTaught}
-              onChange={(e) => setPrinciplesTaught(Number(e.target.value))}
+              onChange={(e) => e.target.value !== '' ? setPrinciplesTaught(Number(e.target.value)) : setPrinciplesTaught(null)}
               placeholder="Enter the number of principles taught"
             />
           </div>
@@ -46,10 +49,9 @@ export function Component() {
             <input
               className="block w-full rounded-md border border-gray-200 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
               id="principles-per-visit"
-              min="0"
               type="number"
               value={principlesPerVisit}
-              onChange={(e) => setPrinciplesPerVisit(Number(e.target.value))}
+              onChange={(e) => e.target.value !== '' ? setPrinciplesPerVisit(Number(e.target.value)) : setPrinciplesPerVisit(null)}
               placeholder="Enter the number of principles taught per visit"
             />
           </div>
@@ -62,10 +64,9 @@ export function Component() {
             <input
               className="block w-full rounded-md border border-gray-200 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
               id="days-between-visits"
-              min="0"
               type="number"
               value={daysBetweenVisits}
-              onChange={(e) => setDaysBetweenVisits(Number(e.target.value))}
+              onChange={(e) => e.target.value !== '' ? setDaysBetweenVisits(Number(e.target.value)) : setDaysBetweenVisits(null)}
               placeholder="Enter the number of days between visits"
             />
           </div>
