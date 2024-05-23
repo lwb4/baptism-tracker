@@ -44,7 +44,7 @@ export function Component() {
             <label
               className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-400"
               htmlFor="principles-per-visit">
-              Principles Taught per Visit
+              Principles To Be Taught per Visit
             </label>
             <input
               className="block w-full rounded-md border border-gray-200 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
@@ -52,7 +52,7 @@ export function Component() {
               type="number"
               value={principlesPerVisit}
               onChange={(e) => e.target.value !== '' ? setPrinciplesPerVisit(Number(e.target.value)) : setPrinciplesPerVisit(null)}
-              placeholder="Enter the number of principles taught per visit"
+              placeholder="Enter the number of principles to be taught per visit"
             />
           </div>
           <div>
