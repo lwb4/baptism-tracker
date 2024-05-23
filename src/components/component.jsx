@@ -23,7 +23,7 @@ export function Component() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100 px-4 py-8 dark:bg-gray-900">
       <div className="mx-auto w-full max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
-        <h1 className="mb-6 text-3xl font-bold text-gray-900 dark:text-gray-50">Baptism Days Calculator</h1>
+        <h1 className="mb-6 text-3xl font-bold text-gray-900 dark:text-gray-50">Baptism Calculator</h1>
         <form className="space-y-4">
           <div>
             <label
